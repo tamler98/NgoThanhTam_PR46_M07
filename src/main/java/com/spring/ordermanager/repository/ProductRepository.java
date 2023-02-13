@@ -1,7 +1,7 @@
-package com.spring.bookstore.repository;
+package com.spring.ordermanager.repository;
 
 
-import com.spring.bookstore.entity.ProductEntity;
+import com.spring.ordermanager.entity.ProductEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

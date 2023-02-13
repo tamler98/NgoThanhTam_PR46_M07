@@ -1,4 +1,4 @@
-package com.spring.bookstore.configuration;
+package com.spring.ordermanager.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,14 +17,14 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.spring.bookstore")
+@EnableJpaRepositories(basePackages = "com.spring.ordermanager")
 public class JPAConfig {
 
     @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/customer?characterEncoding=UTF-8");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/TAMNT?characterEncoding=UTF-8");
         dataSource.setUsername("root");
         dataSource.setPassword("asmyensd4");
         return dataSource;
@@ -34,7 +34,7 @@ public class JPAConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
-        entityManagerFactoryBean.setPackagesToScan("com.spring.bookstore");
+        entityManagerFactoryBean.setPackagesToScan("com.spring.ordermanager");
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManagerFactoryBean.setJpaProperties(additionalProperties());
 

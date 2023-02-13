@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-    <context:component-scan base-package="com.spring.bookstore"/>
+    <context:component-scan base-package="com.spring.ordermanager"/>
     <mvc:resources mapping="/webjars/**" location="/webjars/"/>
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:resources mapping="/webapp/resources/**" location="/webapp/resources/" />

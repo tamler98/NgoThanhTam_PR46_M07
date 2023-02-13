@@ -1,4 +1,4 @@
-package com.spring.bookstore.entity;
+package com.spring.ordermanager.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

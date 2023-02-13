@@ -24,57 +24,40 @@
 
 <body>
     <div class="container" style="margin-top: 10px;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6" style="width:100%;">
+            <form:form action="search" method="get">
+                <div class="input-group">
+                    <input name="searchInput" type="text" class="form-control" placeholder="Search by name..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-outline-primary" style="height: 38px; type=" submit">Search</button>
+                    </span>
+                </div>
+            </form:form>
+        </div>
+    </div>
         <h2 style="margin-top: 20px; margin-bottom: 20px;">Order Manager</h2>
-        <c:if test="${type.equals('orders')}">
             <div class="col-xs-12 col-sm-12 col-md-10">
                 <c:if test="${not empty orderList}">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Customer</th>
-                                <th scope="col">Address</th>
+                                <th scope="col">OrderID</th>
                                 <th scope="col">OrderDate</th>
+                                <th scope="col">CustomerName</th>
+                                <th scope="col">ViewDetail</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="order" items="${orderList}" varStatus="checkout">
                                 <tr>
                                     <th scope="row" style="padding-top:15px;">${order.id}</th>
-                                    <td style="padding-top:15px;">${order.customerName}</td>
-                                    <td style="padding-top:15px;">${order.customerAddress}</td>
                                     <td style="padding-top:15px;">${order.orderDate}</td>
+                                    <td style="padding-top:15px;">${order.customerName}</td>
                                     <td>
                                         <button class="btn btn-sm btn-primary"
-                                            onclick="location.href='cart/view_orderId=${order.id}page1'">View</button>
-                                        <a class="btn btn-sm btn-danger" href="#modalDelete${order.id}"
-                                            class="trigger-btn" data-toggle="modal" data-id="${order.id}?">Delete</a>
+                                            onclick="location.href='view_orderId=${order.id}'">View</button>
                                     </td>
-
-                                    <div id="modalDelete${order.id}" class="modal fade">
-                                        <div class="modal-dialog modal-confirm">
-                                            <div class="modal-content">
-                                                <div class="modal-header flex-column">
-                                                    <div class="icon-box">
-                                                        <i class="fal fa-times">&#129409;</i>
-                                                    </div>
-                                                    <h4 class="modal-title w-100">Delete Order?</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">&times;</button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>Do you really want to delete this order of
-                                                        "${order.customerName}"?</p>
-                                                </div>
-                                                <div class="modal-footer justify-content-center">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-danger"
-                                                        onclick="location.href='orderlist/delete/${order.id}'">Delete</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </tr>
                             </c:forEach>
                         </tbody>
@@ -86,7 +69,6 @@
                         There is no data, please search again with new keyword... Love <3 </div>
                 </c:if>
             </div>
-        </c:if>
 </body>
 
 </html>

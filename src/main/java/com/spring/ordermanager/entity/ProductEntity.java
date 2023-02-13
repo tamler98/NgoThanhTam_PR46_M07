@@ -1,5 +1,4 @@
-package com.spring.bookstore.entity;
-
+package com.spring.ordermanager.entity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -56,3 +55,4 @@ public class ProductEntity {
         this.orderDetails = orderDetails;
     }
 }
+
