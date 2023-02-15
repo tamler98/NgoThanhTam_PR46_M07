@@ -33,7 +33,7 @@ public class OrderController {
         if (searchInput.isEmpty()) {
             searchList = (List<OrderEntity>) orderService.findAll();
         } else {
-            searchList = orderService.findByCustomerNameContainingOrOrderDateContaining(searchInput, searchInput);
+            searchList = orderService.findByCustomerNameContainingOrOrderDateContainingOrProductName(searchInput, searchInput, searchInput);
         }
         model.addAttribute("orderList",searchList);
         return "orderlist";

@@ -12,5 +12,5 @@ public class OrderService {
     @Autowired
     OrderRepository orderRepository;
     public Object findAll() { return orderRepository.findAll();}
-    public List<OrderEntity> findByCustomerNameContainingOrOrderDateContaining(String searchInput, String searchInput1) {return orderRepository.findByCustomerNameContainingOrOrderDateContaining(searchInput, searchInput1);}
+    public List<OrderEntity> findByCustomerNameContainingOrOrderDateContainingOrProductName(String searchInput, String searchInput1, String searchInput2) {return orderRepository.findByCustomerNameContainingOrOrderDateContainingOrProductName(searchInput, searchInput1, searchInput2);}
 }
